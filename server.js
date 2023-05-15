@@ -1,8 +1,7 @@
-// Import required packages / files 
+// Import required packages / variables 
 const express =  require('express');
 const db = require('./config/connection');
 const routes = require('./routes');
-// Set up environment variables
 const PORT = process.env.PORT || 3001;
 const app = express();
 //  Middleware to parse data

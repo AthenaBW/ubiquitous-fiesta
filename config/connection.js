@@ -1,7 +1,10 @@
+// Importing the mongoose library
 const mongoose = require('mongoose');
+// Connecte to the MongoDB database using the MongoDB URI provided in the environment 
+mongoose.connect(process.env.MONOGDB_URI || 'mongodb://localhost:27017/socialdb',{
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+});
 
-// Wrap Mongoose around local connection to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/socialDB');
-
-// Export connection 
-module.exports = mongoose.connection;
+// Exporting the connection to the database as a module
+module.exports = mongoose.connection
